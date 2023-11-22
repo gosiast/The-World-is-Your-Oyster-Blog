@@ -1,16 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Post from './Post';
 
+
 function App ()  {
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      userName: 'John Doe',
+      message: 'This is the first blog post.',
+      timestamp: new Date().toLocaleString(),
+    },
+    {
+      id: 2,
+      userName: 'Jane Smith',
+      message: 'Here is another interesting post.',
+      timestamp: new Date(Date.now() - 1000000).toLocaleString(),
+    },
+    {
+      id: 3,
+      userName: 'Alice Johnson',
+      message: 'A post about coding and React.',
+      timestamp: new Date(Date.now() - 2000000).toLocaleString(),
+    },
+    {
+      id: 4,
+      userName: 'Bob Anderson',
+      message: 'The fourth post is about travels.',
+      timestamp: new Date(Date.now() - 3000000).toLocaleString(),
+    },
+  ]);
   return (
     <div>
       < Navbar />
       <h1>Welcome to My Blog!</h1>
-      {/* Add your blog posts here */}
-      < Post username="Gosia" message= "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups." timestamp="09:36"/>
-      < Footer />
+{/* Map through the posts and render the Post component */}
+            {posts.map((post) => (
+              <Post
+                key={post.id}
+                userName={post.userName}
+                message={post.message}
+                timestamp={post.timestamp}
+              />
+            ))}      < Footer />
     </div>
   );
 };

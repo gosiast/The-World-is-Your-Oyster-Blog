@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 function App ()  {
   return (
@@ -7,6 +8,7 @@ function App ()  {
       < Navbar />
       <h1>Welcome to My Blog!</h1>
       {/* Add your blog posts here */}
+      < Footer />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Post from './Post';
+import About from './About';
 
 
 function App ()  {
